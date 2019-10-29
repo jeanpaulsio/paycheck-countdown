@@ -46,7 +46,7 @@ function App() {
   return (
     <div>
       {days === 0 ? (
-        <h2>It's Pay Day!</h2>
+        <h2 className="alt-title">It's Pay Day!</h2>
       ) : (
         <h1 className="title">
           {days}

@@ -11,6 +11,12 @@
   display: block;
   font-size: 4rem;
   text-align: center;
-  margin-top: -140px;
+  margin-top: -150px;
   color: #000000;
+}
+
+.alt-title {
+  color: white;
+  text-shadow: 0 0 20px #246655;
+  font-size: 4rem;
 }
