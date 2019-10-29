@@ -1,16 +1,13 @@
-.App {
-  text-align: center;
-}
-
-.App-header {
+.main {
   max-height: 100vh;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-title {
+.title {
+  color: white;
   font-size: 33rem;
-  text-shadow: 0 0 43px #1f1f1f;
+  text-shadow: 0 0 20px #246655;
   margin-top: 0;
   margin-bottom: 0;
 }

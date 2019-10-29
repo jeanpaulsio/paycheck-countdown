@@ -1,19 +1,19 @@
-/* Cool background gradient stolen from this pen: https://codepen.io/P1N2O/pen/pyBNzX */
+/* https://www.gradient-animator.com/ */
 body {
   margin: 0;
   width: 100%;
   height: 100vh;
   font-family: "Exo", sans-serif;
-  background: linear-gradient(-45deg, #373737, #282828, #373737, #282828);
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
+  background: linear-gradient(270deg, #246655, #22bf97, #33d7ad);
+  background-size: 600% 600%;
+  animation: gradientAnimation 30s ease infinite;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-@keyframes gradientBG {
+@keyframes gradientAnimation {
   0% {
     background-position: 0% 50%;
   }
@@ -23,9 +23,4 @@ body {
   100% {
     background-position: 0% 50%;
   }
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
 }
