@@ -3,28 +3,13 @@ body {
   height: 100%;
 }
 
-/* https://www.gradient-animator.com/ */
 body {
   margin: 0;
   width: 100%;
   font-family: "Exo", sans-serif;
-  background: linear-gradient(270deg, #246655, #22bf97, #29bd98);
-  background-size: 600% 600%;
-  animation: gradientAnimation 30s ease infinite;
+  background: linear-gradient(180deg, #303030, #3c3d3d, #111111);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }

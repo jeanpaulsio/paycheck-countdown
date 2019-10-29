@@ -41,7 +41,7 @@ function App() {
 
   useEffect(() => {
     document.title = days === 0 ? "It's Pay Day!" : `${days} Days`;
-  }, [days]);
+  });
 
   return (
     <div>
