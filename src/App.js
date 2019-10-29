@@ -55,6 +55,7 @@ function App() {
     <div className="container">
       {isPayDay ? (
         <React.Fragment>
+          <Confetti width={width} height={height} colors={COLORS} />
           <a
             className="payday-title"
             href="https://youtu.be/fLCf-URqIf0?t=101"
