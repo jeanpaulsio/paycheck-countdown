@@ -49,7 +49,7 @@ function App() {
     document.title = isPayDay
       ? "IT'S PAY DAY"
       : `${days} Days Till Next Paycheck`;
-  });
+  }, [days]);
 
   return (
     <div className="container">
@@ -60,7 +60,6 @@ function App() {
             className="payday-title"
             href="https://youtu.be/fLCf-URqIf0?t=101"
             target="_blank"
-            rel="noopener noreferrer"
           >
             It's Pay Day!
           </a>
