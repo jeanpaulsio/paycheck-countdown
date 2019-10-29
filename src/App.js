@@ -4,7 +4,7 @@ import {
   format,
   isSaturday,
   isSunday,
-  lastDayOfMonth,
+  lastDayOfMonth
 } from "date-fns";
 
 import "./App.css";
