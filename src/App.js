@@ -1,12 +1,10 @@
 import React, { useEffect } from "react";
-import Confetti from "react-confetti";
-
 import {
   differenceInCalendarDays,
   format,
   isSaturday,
   isSunday,
-  lastDayOfMonth,
+  lastDayOfMonth
 } from "date-fns";
 
 import "./App.css";
@@ -41,19 +39,21 @@ export function daysUntilPaycheck(today) {
 function App() {
   const days = daysUntilPaycheck(new Date());
 
-  useEffect(() => {
-    document.title = `${days} Days Till Next Paycheck`;
-  }, [days]);
+  useEffect(
+    () => {
+      document.title = `${days} Days Till Next Paycheck`;
+    },
+    [days]
+  );
 
   return (
     <div className="App">
       <header className="App-header">
-        <Confetti />
-        {days === 0 ? (
-          <h2>It's Pay Day!</h2>
-        ) : (
-          <h1 className="App-title">{days}</h1>
-        )}
+        {days === 0
+          ? <h2>It's Pay Day!</h2>
+          : <h1 className="App-title">
+              {days}
+            </h1>}
       </header>
     </div>
   );
