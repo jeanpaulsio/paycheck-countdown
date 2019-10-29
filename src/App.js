@@ -45,7 +45,7 @@ function App() {
   }, [days]);
 
   return (
-    <div className="main">
+    <div>
       {days === 0 ? <h2>It's Pay Day!</h2> : <h1 className="title">{days}</h1>}
     </div>
   );
