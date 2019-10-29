@@ -42,15 +42,18 @@ export function daysUntilPaycheck(today) {
 
 function App() {
   const days = daysUntilPaycheck(new Date());
+  const isPayDay = days === 0;
   const { width, height } = useWindowSize();
 
   useEffect(() => {
-    document.title = `${days} Days Till Next Paycheck`;
+    document.title = isPayDay
+      ? "IT'S PAY DAY"
+      : `${days} Days Till Next Paycheck`;
   }, [days]);
 
   return (
     <div className="container">
-      {days === 0 ? (
+      {isPayDay ? (
         <>
           <Confetti width={width} height={height} colors={COLORS} />
           <a
