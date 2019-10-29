@@ -40,8 +40,7 @@ function App() {
   const days = daysUntilPaycheck(new Date());
 
   useEffect(() => {
-    document.title =
-      days === 0 ? "It's Pay Day!" : `${days} Days Till Next Paycheck`;
+    document.title = days === 0 ? "It's Pay Day!" : `${days} Days`;
   }, [days]);
 
   return (
@@ -51,7 +50,7 @@ function App() {
       ) : (
         <h1 className="title">
           {days}
-          <span className="subtitle">{days === 1 ? "DAY" : "DAYS"}</span>
+          <span className="subtitle">{days === 1 ? "DAY!" : "DAYS!"}</span>
         </h1>
       )}
     </div>
