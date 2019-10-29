@@ -39,9 +39,12 @@ export function daysUntilPaycheck(today) {
 function App() {
   const days = daysUntilPaycheck(new Date());
 
-  useEffect(() => {
-    document.title = `${days} Days Till Next Paycheck`;
-  }, []);
+  useEffect(
+    () => {
+      document.title = `${days} Days Till Next Paycheck`;
+    },
+    [days]
+  );
 
   return (
     <div className="App">

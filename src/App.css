@@ -3,17 +3,13 @@
 }
 
 .App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  max-height: 100vh;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
 .App-title {
-  font-size: 38rem;
+  font-size: 33rem;
   text-shadow: 0 0 43px #a5b3a5;
   margin-top: 0;
   margin-bottom: 0;
