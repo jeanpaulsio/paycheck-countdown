@@ -54,7 +54,7 @@ function App() {
   return (
     <div className="container">
       {isPayDay ? (
-        <>
+        <React.Fragment>
           <Confetti width={width} height={height} colors={COLORS} />
           <a
             className="payday-title"
@@ -64,7 +64,7 @@ function App() {
           >
             It's Pay Day!
           </a>
-        </>
+        </React.Fragment>
       ) : (
         <h1 className="countdown-title">{days}</h1>
       )}
