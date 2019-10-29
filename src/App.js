@@ -11,14 +11,7 @@ import {
 
 import "./App.css";
 
-const COLORS = [
-  "#d6ba68",
-  "#c1a95e",
-  "#9b8649",
-  "#ccb576",
-  "#c6a445",
-  "#f7e7ce",
-];
+const COLORS = ["#d6ba68", "#c1a95e", "#9b8649", "#ccb576", "#c6a445"];
 
 export function isPastMidMonth(dayOfMonth) {
   return dayOfMonth > 15;
@@ -60,9 +53,8 @@ function App() {
 
   return (
     <div className="container">
-      {!isPayDay ? (
-        <>
-          <Confetti width={width} height={height} colors={COLORS} />
+      {isPayDay ? (
+        <React.Fragment>
           <a
             className="payday-title"
             href="https://youtu.be/fLCf-URqIf0?t=101"
@@ -71,7 +63,7 @@ function App() {
           >
             It's Pay Day!
           </a>
-        </>
+        </React.Fragment>
       ) : (
         <h1 className="countdown-title">{days}</h1>
       )}
