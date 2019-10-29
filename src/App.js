@@ -1,17 +1,13 @@
 import React, { useEffect } from "react";
-import Confetti from "react-confetti";
-import { useWindowSize } from "react-use";
 import {
   differenceInCalendarDays,
   format,
   isSaturday,
   isSunday,
-  lastDayOfMonth,
+  lastDayOfMonth
 } from "date-fns";
 
 import "./App.css";
-
-const COLORS = ["#d6ba68", "#c1a95e", "#9b8649", "#ccb576", "#c6a445"];
 
 export function isPastMidMonth(dayOfMonth) {
   return dayOfMonth > 15;
@@ -42,28 +38,23 @@ export function daysUntilPaycheck(today) {
 
 function App() {
   const days = daysUntilPaycheck(new Date());
-  const { width, height } = useWindowSize();
 
-  useEffect(() => {
-    document.title = `${days} Days Till Next Paycheck`;
-  }, [days]);
+  useEffect(
+    () => {
+      document.title = `${days} Days Till Next Paycheck`;
+    },
+    [days]
+  );
 
   return (
-    <div className="container">
-      {days === 0 ? (
-        <>
-          <Confetti width={width} height={height} colors={COLORS} />
-          <a
-            className="payday-title"
-            href="https://youtu.be/fLCf-URqIf0?t=101"
-            target="_blank"
-          >
-            It's Pay Day!
-          </a>
-        </>
-      ) : (
-        <h1 className="countdown-title">{days}</h1>
-      )}
+    <div className="App">
+      <header className="App-header">
+        {days === 0
+          ? <h2>It's Pay Day!</h2>
+          : <h1 className="App-title">
+              {days}
+            </h1>}
+      </header>
     </div>
   );
 }
