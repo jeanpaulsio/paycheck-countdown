@@ -46,7 +46,14 @@ function App() {
 
   return (
     <div>
-      {days === 0 ? <h2>It's Pay Day!</h2> : <h1 className="title">{days}</h1>}
+      {days === 0 ? (
+        <h2>It's Pay Day!</h2>
+      ) : (
+        <h1 className="title">
+          {days}
+          <span className="subtitle">{days === 1 ? "DAY" : "DAYS"}</span>
+        </h1>
+      )}
     </div>
   );
 }

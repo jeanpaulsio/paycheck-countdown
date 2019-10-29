@@ -8,7 +8,7 @@ body {
   margin: 0;
   width: 100%;
   font-family: "Exo", sans-serif;
-  background: linear-gradient(270deg, #246655, #22bf97, #33d7ad);
+  background: linear-gradient(270deg, #246655, #22bf97, #29bd98);
   background-size: 600% 600%;
   animation: gradientAnimation 30s ease infinite;
   display: flex;
