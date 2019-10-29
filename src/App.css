@@ -1,7 +1,5 @@
 .title {
-  color: white;
   font-size: 30rem;
-  text-shadow: 0 0 20px #1b1b1b;
   margin: 0;
   padding: 0;
   margin-top: -125px;
@@ -12,12 +10,8 @@
   font-size: 4rem;
   text-align: center;
   margin-top: -130px;
-  color: white;
-  text-shadow: 0 0 20px #000000;
 }
 
 .alt-title {
-  color: white;
-  text-shadow: 0 0 20px #070707;
   font-size: 4rem;
 }
