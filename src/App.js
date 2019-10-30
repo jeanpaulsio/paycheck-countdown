@@ -36,24 +36,28 @@ export function daysUntilPaycheck(today) {
   }
 }
 
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+function dayDisplay(days) {
+  return days === 1 ? "day" : "days";
+}
+
 function App() {
   const days = daysUntilPaycheck(new Date());
 
   useEffect(() => {
-    document.title = days === 0 ? "It's Pay Day!" : `${days} Days`;
+    document.title =
+      days === 0
+        ? "It's Pay Day!"
+        : `${days} ${capitalize(dayDisplay(days))} Left`;
   });
 
-  return (
-    <div>
-      {days === 0 ? (
-        <h2 className="alt-title">It's Pay Day!</h2>
-      ) : (
-        <h1 className="title">
-          {days}
-          <span className="subtitle">{days === 1 ? "DAY!" : "DAYS!"}</span>
-        </h1>
-      )}
-    </div>
+  return days === 0 ? (
+    <h2 className="alt-title">It's Pay Day!</h2>
+  ) : (
+    <h1 className="title">{days}</h1>
   );
 }
 
