@@ -4,25 +4,10 @@ import {
   format,
   isSaturday,
   isSunday,
-  lastDayOfMonth,
-  subDays,
-  isSameDay,
+  lastDayOfMonth
 } from "date-fns";
 
 import "./App.css";
-
-const UPCOMING_HOLIDAYS = [
-  new Date(2019, 10, 28), // Thanksgiving
-  new Date(2019, 10, 29), // Day After Thanksgiving
-  new Date(2019, 11, 24), // Christmas Eve
-  new Date(2019, 11, 25), // Christmas
-  new Date(2020, 0, 1), // New Years
-  new Date(2020, 0, 20), // MLK Jr. Day
-  new Date(2020, 1, 17), // President's Day
-  new Date(2020, 4, 25), // Memorial Day
-  new Date(2020, 6, 4), // Independence Day
-  new Date(2020, 8, 7), // Labor Day
-]
 
 export function isPastMidMonth(dayOfMonth) {
   return dayOfMonth > 15;
@@ -40,34 +25,14 @@ export function getNextPayDay(today) {
 
 export function daysUntilPaycheck(today) {
   const payDay = getNextPayDay(today);
-
-  let newDate;
-  let holidays = [...UPCOMING_HOLIDAYS];
+  const difference = differenceInCalendarDays(payDay, today);
 
   if (isSaturday(payDay)) {
-    newDate = subDays(payDay, 1)
-
-    while(holidays.length > 0) {
-      let holiday = holidays.pop()
-      if (isSameDay(holiday, newDate)) {
-        newDate = subDays(newDate, 1)
-      }
-    }
-
-    return differenceInCalendarDays(newDate, today)
+    return difference - 1;
   } else if (isSunday(payDay)) {
-    newDate = subDays(payDay, 2)
-
-    while(holidays.length > 0) {
-      let holiday = holidays.pop()
-      if (isSameDay(holiday, newDate)) {
-        newDate = subDays(newDate, 1)
-      }
-    }
-
-    return differenceInCalendarDays(newDate, today)
+    return difference - 2;
   } else {
-    return differenceInCalendarDays(payDay, today);
+    return difference;
   }
 }
 
